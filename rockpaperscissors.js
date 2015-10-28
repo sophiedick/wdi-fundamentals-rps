@@ -36,7 +36,7 @@ function getPlayerMove(move) {
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
     return /* Your Expression */;
 }
-
+  
 function getComputerMove(move) {
     var move 
         if move != null {
