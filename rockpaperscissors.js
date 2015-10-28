@@ -22,13 +22,13 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 
-function getPlayerMove(move) {
+function getPlayerMove(move) { /* note forself this is the same var getPlayerMove = function(move) */
     var move  
         if move != null {
             move = move;
         }
         else {
-            move = getInput()
+            return getInput()
         }
 
     // Write an expression that operates on a variable called `move`
@@ -44,7 +44,7 @@ function getComputerMove(move) {
         }
 
         else {
-            move = randomPlay()
+            return randomPlay()
         }
 
     // Write an expression that operates on a variable called `move`
