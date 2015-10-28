@@ -28,7 +28,7 @@ function getPlayerMove(move) {
             move = move;
         }
         else {
-            move = getInput()
+            move =getInput()
         }
 
     // Write an expression that operates on a variable called `move`
