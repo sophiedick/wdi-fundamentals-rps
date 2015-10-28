@@ -37,12 +37,11 @@ function getPlayerMove(move) { /* note forself this is the same var getPlayerMov
     return /* Your Expression */;
 }
   
-function getComputerMove(move) {
+function getComputerMove(move) { /* note forself this is the same var getComputerrMove = function(move) */
     var move 
         if move != null {
             move = move; 
         }
-
         else {
             return randomPlay()
         }
