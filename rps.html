@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html>
+
+<head> 
+
+<script> 
+
+function getInput() {
+    return prompt("Please choose either 'rock', 'paper', or 'scissors'.");
+}
+
+function randomPlay() {
+    var randomNumber = Math.random();
+    if (randomNumber < 0.33) {
+        return "rock";
+    } else if (randomNumber < 0.66) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
+}
+
+function getPlayerMove(move) {
+
+    if (move == null){
+      return getInput();       
+    }
+    else{
+    return move; 
+    } 
+
+}  
+
+function getComputerMove(move) {
+
+    if (move == null){
+        return randomPlay(); 
+    } 
+    else {
+        return move; 
+    }
+} 
+
+function getWinner(playerMove,computerMove) {
+    
+    if (playerMove == 'rock' && computerMove == 'scissors') {
+        
+    console.log('Player wins!'); 
+    return 1; 
+    
+    }
+    else if (playerMove == 'rock' && computerMove == 'paper') {
+        
+    console.log('Computer wins!'); 
+    return 2; 
+    
+    }
+    else if (playerMove == 'paper' && computerMove == 'rock') {
+        console.log('Player wins!'); 
+        return 1; 
+    }
+    else if (playerMove == 'paper' && computerMove == 'scissors') {
+        console.log('Computer wins!'); 
+        return 2; 
+    }
+    else if (playerMove == 'scissors' && computerMove == 'paper') {
+        console.log('Player wins!'); 
+        return 1; 
+    }
+    
+    else if (playerMove == 'scissors' && computerMove == 'rock') {
+        console.log('Computer wins!'); 
+        return 2; 
+    }
+    else {    
+    console.log('It is a tie!'); 
+    return 0; 
+    } 
+}
+
+function onClick() {
+	var playerMove = getPlayerMove(null); 
+	var computerMove = getComputerMove(null);
+	var winner = getWinner(playerMove, computerMove);
+	
+	console.log(playerMove + " " + computerMove); 
+	
+	if ( winner == 1) {//player won
+		console.log("Player won!"); 
+	} else if (winner ==2) {// computer won 
+		console.log("Computer won!"); 
+		
+	} else {
+		console.log("It is a tie!")
+	}
+}
+
+function playToFive() {
+    console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    
+    while (playerWins < 5 && computerWins < 5) {
+        var playerMove = getPlayerMove(null); 
+        var computerMove = getComputerMove(null);
+        var winner = getWinner(playerMove, computerMove);
+        
+        console.log(playerMove + " " + computerMove); 
+        
+        if ( winner == 1) {//player won
+            playerWins += 1; 
+        } else if (winner ==2) {// computer won 
+            computerWins += 1; 
+            
+        }
+        
+    }
+    
+    if (playerWins > computerWins) {
+        console.log("Player is the winner!"); 
+    } else {
+        console.log("Computer is the winner!"); 
+    }
+    
+    return [playerWins, computerWins];
+}
+
+playToFive(); 
+
+</script> 
+
+</head> 
+
+<body> 
+
+<!-- 
+<button onclick="onClick();"> press me </button> 
+--> 
+</body>    
+
+</html> 
